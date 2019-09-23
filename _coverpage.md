@@ -9,5 +9,4 @@
 * 专心致志地去摸鱼
 
 [开始](#首页)
-[Github](https://github.com/jamesyangget/)
-[博客](https://white-album.tk/)
+[个人主页](https://white-album.top/)
