@@ -1,121 +1,121 @@
 # FAQs
 
-## Table of contents
+## 目录
 
-### [What is a Raspberry Pi?](#introduction)
+### [什么是树莓派?](#introduction)
 
-### [Buying your first Pi](#buying)
+### [买第一个树莓派](#buying)
 
-- Where can I buy a Raspberry Pi, and how much does it cost?
-- What do I get when I buy one?
-- I'm worried I have a fake Pi!
+- 哪里我可以买到树莓派，它需要多少钱？
+- 买到一个的时候我能干什么？
+- 我担心自己有一个假的树莓派（译者的也快要吃灰了2333）。
 
-### [Commercial and industry applications, resale](#commercial)
-- I want to be a Raspberry Pi reseller.
-- What manufacturing standards etc. does the Pi comply with?
-- Can I use a Pi in a commercial product?
-- Is a Pi suitable for industrial applications?
+### [商业和工业应用，转售](#commercial)
+- 我想成为树莓派的经销商。
+- 树莓派符合什么制造标准等？
+- 我可以在商业产品中使用树莓派吗？
+- 树莓派是否适合工业应用？
 
-### [The computer hardware](#hardware)
+### [电脑硬件](#hardware)
 
-- What are the differences between Raspberry Pi models?
-- What hardware documentation is available?
-- What hardware interfaces does it have?
-- Can I use a Pi for audio or video input?
-- Where is the on/off switch?
-- What are the dimensions of the Raspberry Pi?
+- 树莓派型号之间有什么区别？
+- 有哪些可用的硬件文档？
+- 它有什么硬件接口？
+- 我可以使用树莓派进行音频或视频输入吗？
+- 开关在哪里？
+- 树莓派的尺寸是多少？
 
-### [Performance](#pi-performance)
+### [性能](#pi-performance)
 
-- How powerful is it?
-- Can I use my Pi as a desktop replacement?
-- Can I add extra RAM?
-- Can I connect multiple Pis together to make a faster computer?
-- Why does my Pi run at a slower clock speed that advertised?
-- Does it overclock?
-- What is its operating temperature? Does it need a heatsink?
+- 它有多强大？
+- 我可以将树莓派用作台式机替代品吗？
+- 我可以添加额外的RAM吗？
+- 我可以将多个树莓派连接在一起以使计算机速度更快吗？
+- 为什么我的树莓派以较低的时钟速度运行？
+- 它超频了吗？
+- 它的工作温度是多少？ 需要散热器吗？
 
-### [Software](#pi-software)
+### [软件](#pi-software)
 
-- What operating system (OS) does it use?
-- Updates? Upgrades? What do I do?
-- I heard about something called `rpi-update`. When should I use that?
-- The processors on the latest Pi models are 64-bit, but I cannot find an official 64-bit OS.
-- Will it run WINE (or Windows, or other x86 software)?
-- Will it run the Windows 8 Arm edition?
-- Will it run Android or Android Things?
-- Will it run old software?
-- My `.exe` file won't run!
-- Can I share files from my Pi with my Windows machines?
-- Why does `cpuinfo` report I have a bcm2835?
-- How do I run a program at startup?
-- How do I run a program at a specific time?
+- 它使用什么操作系统（OS）？
+- 更新？ 升级？ 我该怎么办？
+- 我听说过所谓的`rpi-update`。 我什么时候该使用？
+- 最新的树莓派型号上的处理器是64位的，但是我找不到官方的64位OS。
+- 它将运行WINE（或Windows或其他x86软件）吗？
+- 它将运行Windows 8 Arm版本吗？
+- 它将运行Android还是Android相关的东西？
+- 它将运行旧软件吗？
+- 我的`.exe`文件无法运行！
+- 我可以与Windows机器共享Pi中的文件吗？
+- 为什么`cpuinfo`报告我有bcm2835？
+- 如何在启动时运行程序？
+- 如何在特定时间运行程序？
 
-### [Video](#pi-video)
+### [视频](#pi-video)
 
-- What displays can I use?
-- Does the HDMI port support CEC?
-- Why is there no VGA support?
-- Can I add a touchscreen?
-- What codecs can it play?
+- 我可以使用什么显示器？
+- HDMI端口是否支持CEC？
+- 为什么没有VGA支持？
+- 我可以添加触摸屏吗？
+- 它可以播放什么编解码器？
 
-### [Audio](#pi-audio)
+### [音频](#pi-audio)
 
-- Is sound over HDMI supported?
-- What about standard audio in and out?
+- 是否支持HDMI声音？
+- 标准音频输入和输出怎么样？
 
-### [Power](#pi-power)
+### [电源](#pi-power)
 
-- Is it safe to just pull the power?
-- What are the power requirements?
-- Can I power the Raspberry Pi from a USB hub?
-- Can I power the Raspberry Pi from batteries as well as from a wall socket?
-- Is Power over Ethernet (PoE) possible?
-- What voltage devices can I attach to the GPIO pins, and how much current can I pull?
+- 拔电源是否安全？
+- 电源要求是多少？
+- 我可以通过USB集线器为树莓派供电吗？
+- 我可以通过电池以及墙上插座为树莓派供电吗？
+- 以太网供电（PoE）是否可行？
+- 我可以在GPIO引脚上连接什么电压设备，可以拉多少电流？
 
-### [SD cards and storage](#sd-cards)
+### [SD卡和存储](#sd-cards)
 
-- What size of SD card do I need?
-- What size of SD card can it support?
-- Can I boot a Pi from a USB-attached hard drive instead of the SD card?
+- 我需要什么尺寸的SD卡？
+- 它可以支持什么大小的SD卡？
+- 是否可以从附有USB的硬盘驱动器而不是SD卡引导树莓派？
 - What happens if I brick the device?
 
-### [Networking and wireless connectivity](#networking)
+### [联网和无线连接](#networking)
 
-- Does the device support networking?
-- Is there built-in WiFi?
-- Is there built-in Bluetooth?
-- I don't seem to get full-speed gigabit networking on my Pi 3B+.
-- Does the device have support for any form of netbooting or PXE?
+- 设备是否支持联网？
+- 有内置的WiFi吗？
+- 有内置的蓝牙吗？
+- 我的Pi 3B+上似乎没有全速千兆网络。
+- 设备是否支持任何形式的网络引导或PXE？
 
-### [Camera Module](#cameramodule)
+### [相机模块](#cameramodule)
 
-- What is the Camera Module?
-- What model of camera does the Camera Module use?
-- What resolutions are supported?
-- What picture formats are supported?
-- How do I use the Camera Module?
-- How much power does the Camera Module use?
+- 什么是相机模块？
+- 相机模块使用什么型号的相机？
+- 支持哪些分辨率？
+- 支持哪些图片格式？
+- 如何使用相机模块？
+- 相机模块使用多大电源？
 
-### [Troubleshooting](#troubleshoot)
+### [故障排除](#troubleshoot)
 
-- What is the username and password for the Raspberry Pi?
-- Why does nothing happen when I type in my password?
-- Why does my Pi not start up/boot?
-- Why is my Pi hot?
-- I keep getting a lightning bolt symbol and messages about power...
-- My SD card seems to have stopped working.
-- I've imaged an SD card with Raspbian/NOOBS, but when I look at it with my Windows PC, it's not all there!
+- 树莓派的用户名和密码是什么？
+- 为什么输入密码时什么也没发生？
+- 为什么我的Pi无法启动？
+- 为什么我的Pi很烫？
+- 我不断收到闪电符号和关于电源的消息...
+- 我的SD卡似乎已停止工作。
+- 我已经用Raspbian/NOOBS制作了SD卡的镜像，但是当我用Windows PC对其进行查看时，并没有全部！
 
 ---
 
 <a name="introduction"></a>
-## What is a Raspberry Pi?
+## 什么是树莓派？
 
-Raspberry Pi is the third best-selling computer brand in the world. The Raspberry Pi is a credit card–sized computer that plugs into your TV or display, and a keyboard and mouse. You can use it to learn coding and to build electronics projects, and for many of the things that your desktop PC does, like spreadsheets, word processing, browsing the internet, and playing games. It also plays high-definition video. The Raspberry Pi is being used by adults and children all over the world to learn programming and digital making. You can learn how to set up and use your Raspberry Pi [here](https://www.raspberrypi.org/help/).
+Raspberry Pi是世界第三大畅销计算机品牌。Raspberry Pi是一台信用卡大小的计算机，可插入电视或显示器，以及键盘和鼠标。您可以使用它来学习编码和构建电子项目，以及用于台式PC所做的许多事情，例如电子表格，文字处理，浏览Internet和玩游戏。它还播放高清视频。Raspberry Pi被世界各地的成人和儿童用来学习编程和数字制作。您可以在 [此处](https://www.raspberrypi.org/help/) 了解如何设置和使用Raspberry Pi。
 
 <a name="buying"></a>
-## Buying your first Pi
+## 买第一个树莓派
 
 ### Where can I buy a Raspberry Pi, and how much does it cost?
 
