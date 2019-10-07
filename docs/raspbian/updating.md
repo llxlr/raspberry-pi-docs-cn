@@ -1,4 +1,4 @@
-# Updating and upgrading Raspbian
+# 更新和升级Raspbian
 
 This section covers how to deploy software updates to devices running Raspbian.
 
@@ -8,19 +8,19 @@ The first and probably the most important reason is security. A device running R
 
 The second reason, which is related to the first, is that the software you are running on your device most certainly contains bugs. Some bugs are CVEs, but bugs could also be affecting the desired functionality without being related to security. By keeping your software up to date, you are lowering the chances of hitting these bugs.
 
-## APT (Advanced Packaging Tool)
+## APT (高级包管理工具)
 
-To update software in Raspbian, you can use the [apt](../linux/software/apt.md) tool in a terminal. Open a terminal window from the taskbar or application menu:
+你可以在终端使用 [apt](../linux/software/apt.md) 工具来更新Raspbian内的软件。从任务栏或程序菜单打开一个终端窗口：
 
-![Terminal](../usage/terminal/images/terminal.png)
+![终端Terminal](../usage/terminal/images/terminal.png)
 
-First, **update** your system's package list by entering the following command:
+首先，通过回车运行以下命令 **更新** 你系统的包列表：
 
 ```bash
 sudo apt-get update
 ```
 
-Next, **upgrade** all your installed packages to their latest versions with the following command:
+然后，通过以下命令 **升级** 你安装的所有包到它们的最终版本：
 
 ```bash
 sudo apt-get dist-upgrade
@@ -30,27 +30,27 @@ Generally speaking, doing this regularly will keep your installation up to date,
 
 However, there are occasional changes made in the Foundation's Raspbian image that require manual intervention, for example a newly introduced package. These are not installed with an upgrade, as this command only updates the packages you already have installed.
 
-### Updating the kernel and firmware
+### 更新内核和固件
 
 The kernel and firmware are installed as a Debian package, and so will also get updates when using the procedure above. These packages are updated infrequently and after extensive testing.
 
-### Running out of space
+### 空间使用
 
 When running `sudo apt-get dist-upgrade`, it will show how much data will be downloaded and how much space it will take up on the SD card. It's worth checking with `df -h` that you have enough free disk space, as unfortunately `apt` will not do this for you. Also be aware that downloaded package files (`.deb` files) are kept in `/var/cache/apt/archives`. You can remove these in order to free up space with `sudo apt-get clean`.
 
-### Upgrading from Jessie to Stretch
+### 从Jessie升级到Stretch
 
-Upgrading an existing Jessie image is possible, but is not guaranteed to work in every circumstance. If you wish to try upgrading a Jessie image to Stretch, we strongly recommend making a backup first — we can accept no responsibility for loss of data from a failed update.
+升级一个已存在的 Jessie 镜像是可以的，但是不能保证在所有环境下都能工作。 如果你想尝试升级 Jessie 镜像到 Stretch，我们强烈推荐先做个备份 — 对于更新失败导致的数据丢失，我们不承担任何责任。
 
-To upgrade, first modify the files `/etc/apt/sources.list` and `/etc/apt/sources.list.d/raspi.list`. In both files, change every occurrence of the word `jessie` to `stretch`. (Both files will require sudo to edit.)
+为了升级，首先修改 `/etc/apt/sources.list` 和 `/etc/apt/sources.list.d/raspi.list`文件。 在两个文件中， 把所有的 `jessie` 关键词改为 `stretch`。（这两个文件都需要使用sudo进行编辑）
 
-Then open a terminal window and execute:
+打开终端窗口并执行：
 
 ```bash
 sudo apt-get update
 sudo apt-get -y dist-upgrade
 ```
-Answer 'yes' to any prompts. There may also be a point at which the install pauses while a page of information is shown on the screen – hold the <kbd>space</kbd> key to scroll through all of this and then press <kbd>q</kbd> to continue.
+对任何提示回答“yes”。 There may also be a point at which the install pauses while a page of information is shown on the screen – hold the <kbd>space</kbd> key to scroll through all of this and then press <kbd>q</kbd> to continue.
 
 Finally, if you are not using PulseAudio for anything other than Bluetooth audio, remove it from the image by entering:
 
@@ -58,13 +58,13 @@ Finally, if you are not using PulseAudio for anything other than Bluetooth audio
 sudo apt-get -y purge "pulseaudio*"
 ```
 
-If moving to a new Pi model (for example the Pi 3B+), you may also need to update the kernel and the firmware using the instructions above.
+如果转移到一个新的树莓派型号 （例如Raspberry Pi 3B+），你或许也需要使用以上说明来升级内核和固件。
 
-## Third-party solutions
+## 第三方解决方案
 
-This section addresses why third-party solutions are of interest and why [apt](../linux/software/apt.md) is not optimal for all situations. It also covers existing third-party solutions that support Raspbian.
+本节介绍了为什么需要第三方解决方案和为什么 [apt](../linux/software/apt.md) 不是最佳解决方案。它还涵盖了支持Raspbian的现有第三方解决方案。
 
-[Apt](../linux/software/apt.md) is a convenient way of updating the software of your device running Raspbian, but the limitation of this method becomes apparent when you have a larger pool of devices to update, and especially when you do not have physical access to your devices and when they are distributed geographically.
+[Apt](../linux/software/apt.md) 是一个方便更新运行在你Raspbian设备软件的方式， 但是当你有较大数量的设备要更新时这个方法的限制变得很明显, and 特别是 when you do not have physical access to your devices and when 他们是地理分布。
 
 If you lack physical access to your devices and want to deploy unattended updates Over-The-Air (OTA), here are some general requirements:
 
@@ -77,6 +77,6 @@ Unfortunately [apt](../linux/software/apt.md) lacks the robustness features, i.e
 
 ### Mender
 
-Mender is an end-to-end, open-source update manager. A robust update process is implemented with atomic dual system update, there is always one working system partition, and Mender updates the one that is not running. You can read more On the [Mender: how it works](https://mender.io/product/how-it-works) web page.
+Mender 是一个端到端的开源更新管理器。A robust update process is implemented with atomic dual system update, there is always one working system partition, and Mender updates the one that is not running. 你可以在 [Mender: how it works](https://mender.io/product/how-it-works) 网页阅读更多。
 
-Mender supports Raspbian. To enable support for Mender in your Raspbian image, follow the tutorial for [Raspbian with Mender](https://hub.mender.io/t/raspberry-pi-3-model-b-b-raspbian/140).
+Mender 支持 Raspbian。 按照教程 [Raspbian with Mender](https://hub.mender.io/t/raspberry-pi-3-model-b-b-raspbian/140) 启用 Mender 在你 Raspbian 镜像上的支持。
