@@ -1,6 +1,6 @@
-# Raspbian Applications
+# Raspbian 应用程序
 
-- [Camera](camera.md)
-    - Information on the demonstration camera software
+- [相机](camera.md)
+    - 有关演示相机软件的信息
 - [OMXPlayer](omxplayer.md)
-    - Information on the OMXPlayer command line media player
+    - OMXPlayer命令行媒体播放器上的信息
