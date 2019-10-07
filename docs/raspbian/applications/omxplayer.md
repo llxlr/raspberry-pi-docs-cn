@@ -1,31 +1,31 @@
-# OMXPlayer: An accelerated command line media player
+# OMXPlayer: 一个加速的命令行媒体播放器
 
-Installed on Raspbian is a command line media player, called OMXPlayer. This is HW accelerated, and can play back many popular audio and video file formats.
+安装在Raspbian的是一个命令行媒体播放器，叫作 OMXPlayer。 这是一个硬件加速并可以播放许多流行的音频和视频文件格式的播放器。
 
-OMXPlayer was developed by the Kodi project's Edgar Hucek.
+OMXPlayer由Kodi项目的Edgar Hucek开发。
 
-OMXPlayer uses the OpenMAX (omx) hardware acceleration interface (API) which is the officially supported media API on the Raspberry Pi.
+OMXPlayer 使用由Raspberry Pi官方支持的OpenMAX (omx) 硬件加速接口 (媒体API) 。
 
-## Basic usage
+## 基本用法
 
-The simplest command line is `omxplayer <name of media file>`. The media file can be audio or video or both. For the examples below, we used an H264 video file that is included with the standard Raspbian installation.
+最简单的命令行 `omxplayer <媒体文件名>`。媒体文件可以是音频或视频，或两者都可以。对于以下示例，我们使用了Raspbian标准安装随附的H264视频文件。
 
 ```
 omxplayer /opt/vc/src/hello_pi/hello_video/test.h264
 ```
 
-By default the audio is sent to the analog port. If you are using a HDMI-equipped display device with speakers, you need to tell omxplayer to send the audio signal over the HDMI link.
+默认情况下，音频被发送到模拟端口。如果您正在使用带扬声器并配备HDMI的显示设备，则需要通过HDMI线告诉omxplayer发送音频信号。
 
 ```
 omxplayer --adev hdmi /opt/vc/src/hello_pi/hello_video/test.h264
 ```
 
-When displaying video, the whole display will be used as output. You can specify which part of the display you want the video to be on using the window option.
+显示视频时，整个显示将用作输出。您可以使用窗口选项指定要在视频的显示部分。 
 
 ```
 omxplayer --win 0,0,640,480 /opt/vc/src/hello_pi/hello_video/test.h264
-```
 
+```
 You can also specify which part of the video you want to be displayed: this is called a crop window. This portion of the video will be scaled up to match the display, unless you also use the window option.
 
 ```
@@ -36,7 +36,7 @@ If you are using the Raspberry Pi Foundation's touchscreen display, and you want
 ```
 omxplayer --display n /opt/vc/src/hello_pi/hello_video/test.h264
 ```
-## Options available during playback
+## 播放期间可用的选项
 
 There are a number of options available during playback, actioned by pressing the appropriate key. Not all options will be available on all files. The list of key bindings can be displayed using `omxplayer --keys`:
 
@@ -68,9 +68,9 @@ There are a number of options available during playback, actioned by pressing th
 
 ```
 
-## All command line options
+## 所有命令行选项
 
-This is a full list of options available in the build from 23rd September 2016, displayed using `omxplayer --help`:
+这是自2016年9月23日起构建的可用选项的完整列表，使用 `omxplayer --help` 展示:
 
 ```
  -h  --help                  Print this help
