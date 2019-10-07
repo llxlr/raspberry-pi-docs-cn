@@ -1,20 +1,20 @@
 # Raspbian
 
-Raspbian is the recommended operating system for normal use on a Raspberry Pi.
+建议在Raspberry Pi上日常使用Raspbian操作系统。
 
-Raspbian is a free operating system based on Debian, optimised for the Raspberry Pi hardware. Raspbian comes with over 35,000 packages: precompiled software bundled in a nice format for easy installation on your Raspberry Pi.
+Raspbian是基于Debian的免费操作系统，针对Raspberry Pi硬件进行了优化。Raspbian随附35,000多个软件包：以良好格式捆绑的预编译软件，可以轻松在Raspberry Pi上安装。
 
-Raspbian is a community project under active development, with an emphasis on improving the stability and performance of as many Debian packages as possible.
+Raspbian是一个仍在积极开发中的社区项目，其重点是尽可能提高Debian软件包的稳定性和性能。
 
-## Contents
+## 目录
 
-- [Installing Raspbian](../installation/installing-images/README.md)
-- [Installing software in Raspbian](../linux/software/apt.md)
-- [Updating/Upgrading Raspbian](updating.md)
-- Configuring Raspbian
+- [安装Raspbian](../installation/installing-images/README.md)
+- [在Raspbian上安装软件](../linux/software/apt.md)
+- [更新/升级Raspbian](updating.md)
+- 配置Raspbian
     - [raspi-config](../configuration/raspi-config.md)
     - [config.txt](../configuration/config-txt/README.md)
-    - [screensaver](../configuration/screensaver.md)
-- [Applications](applications/README.md)
-    - [Camera](applications/camera.md)
+    - [屏保](../configuration/screensaver.md)
+- [应用程序](applications/README.md)
+    - [相机](applications/camera.md)
     - [OMXPlayer](applications/omxplayer.md)
