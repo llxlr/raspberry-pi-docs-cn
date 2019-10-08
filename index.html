@@ -9,6 +9,25 @@
     <meta name="description" content="Description">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            position: relative;
+        }
+        #footer{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            color: #969696;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,7 +48,7 @@
         }
     </script>
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-    <footer>
+    <footer class="#footer">
         <div>
             <span>Powered by <a href="https://www.raspberrypi.org">Raspberry Pi Foundation</a><br>Mode ❤️ by <a href="https://github.com/jamesyangget">james yang</a></span>
         </div>
