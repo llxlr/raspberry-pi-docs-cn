@@ -1,6 +1,7 @@
 # 首页
 
-这是树莓派的官方文档，由[树莓派基金会](https://www.raspberrypi.org/)编写及社区贡献。`翻译者`[james yang](https://github.com/jamesyangget)
+这是树莓派的官方文档，由[树莓派基金会](https://www.raspberrypi.org/)编写及社区贡献。
+`翻译者`[james yang](https://github.com/jamesyangget)
 
 ## 目录
 - [设置/快速开始](/docs/setup/README.md)
