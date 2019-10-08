@@ -41,6 +41,7 @@
 ## 个人翻译声明
 
 `翻译发起人`：[james yang](https://github.com/jamesyangget)
+
 `贡献者列表`：
 
 翻译前可参考[大陆简中自由软件本地化工作指南：Free Software Localization Guide for Chinese (China)](http://mirrors.ustc.edu.cn/anthon/aosc-l10n/zh_CN_l10n.pdf)
