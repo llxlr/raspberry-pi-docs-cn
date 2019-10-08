@@ -1,15 +1,15 @@
-# Raspberry Pi Hardware
+# 树莓派硬件
 
-Technical information about Raspberry Pi hardware, including official add-ons and the Pi itself.
+有关树莓派硬件的技术信息，包括官方附件和树莓派本身。
 
-## Contents
+## 目录
 
-- [Raspberry Pi](raspberrypi/README.md)
-- [Camera Module](camera/README.md)
-- [Compute Module](computemodule/README.md)
-- [General HAT information](https://github.com/raspberrypi/hats/blob/master/README.md) (Links to our HAT github repository)
-- [Sense HAT](sense-hat/README.md)
-- [TV HAT](tv-hat/README.md)
-- [Display](display/README.md)
-- [Mouse and Keyboard](keyboard_mouse/README.md)
-- [Industrial use](industrial/README.md)
+- [树莓派](docs/hardware/raspberrypi/README.md)
+- [相机模块](docs/hardware/camera/README.md)
+- [计算模块](docs/hardware/computemodule/README.md)
+- [常规HAT信息](https://github.com/raspberrypi/hats/blob/master/README.md) (Links to our HAT github repository)
+- [Sense HAT](docs/hardware/sense-hat/README.md)
+- [TV HAT](docs/hardware/tv-hat/README.md)
+- [显示器](docs/hardware/display/README.md)
+- [鼠标和键盘](docs/hardware/keyboard_mouse/README.md)
+- [工业用途](docs/hardware/industrial/README.md)
