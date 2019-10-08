@@ -1,7 +1,6 @@
 # 首页
 
 这是树莓派的官方文档，由[树莓派基金会](https://www.raspberrypi.org/)编写及社区贡献。
-`翻译者`[james yang](https://github.com/jamesyangget)
 
 ## 目录
 - [设置/快速开始](/docs/setup/README.md)
@@ -38,3 +37,10 @@
 ***树莓派文档*** 由[树莓派基金会](https://www.raspberrypi.org/)编写，被许可在[知识共享署名-ShareAlike 4.0国际](http://creativecommons.org/licenses/by-sa/4.0/)下。
 
 基于 https://github.com/raspberrypi/documentation 的工作。
+
+## 个人翻译声明
+
+`翻译发起人`：[james yang](https://github.com/jamesyangget)
+`贡献者列表`：
+
+翻译前可参考[大陆简中自由软件本地化工作指南：Free Software Localization Guide for Chinese (China)](http://mirrors.ustc.edu.cn/anthon/aosc-l10n/zh_CN_l10n.pdf)
