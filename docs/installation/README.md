@@ -6,6 +6,6 @@
 
 ## 目录
 
-- [NOOBS](noobs.md)
-- [安装镜像](installing-images/README.md)
-- [SD卡](sd-cards.md)
+- [NOOBS](docs/installation/noobs.md)
+- [安装镜像](docs/installation/installing-images/README.md)
+- [SD卡](docs/installation/sd-cards.md)
