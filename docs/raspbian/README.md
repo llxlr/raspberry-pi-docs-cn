@@ -8,12 +8,12 @@ Raspbian是一个仍在积极开发中的社区项目，其重点是尽可能提
 
 ## 目录
 
-- [安装Raspbian](../installation/installing-images/README.md)
-- [在Raspbian上安装软件](../linux/software/apt.md)
+- [安装Raspbian](.././installation/installing-images/README.md)
+- [在Raspbian上安装软件](.././linux/software/apt.md)
 - [更新/升级Raspbian](updating.md)
 - 配置Raspbian
-    - [raspi-config](../configuration/raspi-config.md)
-    - [config.txt](../configuration/config-txt/README.md)
+    - [raspi-config](.././configuration/raspi-config.md)
+    - [config.txt](.././configuration/config-txt/README.md)
     - [屏保](../configuration/screensaver.md)
 - [应用程序](applications/README.md)
     - [相机](applications/camera.md)
