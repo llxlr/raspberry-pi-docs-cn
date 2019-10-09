@@ -4,9 +4,10 @@
 
 > 🍭 A magical online documentation.
 
-* 纯属个人兴趣翻译
-* 抽出打游戏的时间
-* 专心致志地去摸鱼
+* 梦里不觉秋渐深，余请岂是为他人。
+* 冬雪只应天上有，劝君惜取眼前人。
+
+- *Geek / Love / fun / Awesome*
 
 [开始](home.md)
 [个人主页](https://white-album.top/)
