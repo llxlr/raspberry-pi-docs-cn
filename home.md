@@ -46,7 +46,7 @@
 
 `项目进度`: 
 
-`项目详情`: 目前使用树莓派4未出售时的内容，目前还不想迁移到新内容上面~因为旧东西还屯这，差点咕掉~
+`项目详情`: 目前使用树莓派4未出售时的内容，目前还不想迁移到新内容上面~因为旧东西还屯着呢，差点咕掉~
 
 翻译前可参考[大陆简中自由软件本地化工作指南：Free Software Localization Guide for Chinese (China)](http://mirrors.ustc.edu.cn/anthon/aosc-l10n/zh_CN_l10n.pdf)
 
