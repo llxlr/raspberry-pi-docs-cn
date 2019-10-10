@@ -1,29 +1,29 @@
 # rc.local
 
-In order to have a command or program run when the Pi boots, you can add commands to the `rc.local` file. This is especially useful if you want to be able to plug your Pi in to power headless, and have it run a program without configuration or a manual start.
+为了在树莓派启动时运行命令或程序，您可以将命令添加到`rc.local`文件中。如果您希望能够将树莓派插入无头电源，并让它运行无需配置或手动启动的程序，则此功能特别有用。
 
-An alternative for scheduled task management is [cron](cron.md).
+计划任务管理的替代方法是[cron](docs/linux/usage/cron.md)。
 
-## Editing rc.local
+## 编辑rc.local
 
-On your Pi, edit the file `/etc/rc.local` using the editor of your choice. You must edit with root, for example:
+在您的Pi上，使用您选择的编辑器编辑文件`/etc/rc.local`。 您必须使用root进行编辑，例如：
 
 ```bash
 sudo nano /etc/rc.local
 ```
 
-Add commands below the comment, but leave the line `exit 0` at the end, then save the file and exit.
+在注释下方添加命令，但在末尾保留`exit 0`行，然后保存文件并退出。
 
-### Warning
+### 警告
 
-If your command runs continuously (perhaps runs an infinite loop) or is likely not to exit, you must be sure to fork the process by adding an ampersand to the end of the command, like so:
+如果您的命令连续运行（可能运行无限循环）或可能不退出，则必须确保通过在命令末尾添加一个`＆`符号来分叉该过程，如下所示：
 
-```
+```bash
 python3 /home/pi/myscript.py &
 ```
 
-Otherwise, the script will not end and the Pi will not boot. The ampersand allows the command to run in a separate process and continue booting with the process running.
+否则，脚本将不会结束，树莓派也不会启动。`＆`符号允许命令在单独的进程中运行，并在进程运行时继续引导。
 
-Also, be sure to reference absolute filenames rather than relative to your home folder; for example, `/home/pi/myscript.py` rather than `myscript.py`.
+另外，请确保引用绝对文件名而不是相对于您的主文件夹；例如`/home/pi/myscript.py`而不是`myscript.py`。
 
-One more point to note is that all commands will be executed by the root user. This can lead to unexpected behaviour: for example, if a folder is created by a `mkdir` command in the script, the folder would have root ownership and would not be accessible by anyone other than the root user.
+还有一点要注意的是，所有命令都将由`root`用户执行。这可能导致意外的行为：例如，如果在脚本中通过`mkdir`命令创建了文件夹，则该文件夹将具有`root`所有权，除`root`用户以外的任何人都无法访问。
