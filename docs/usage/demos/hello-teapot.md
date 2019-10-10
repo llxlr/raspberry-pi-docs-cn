@@ -1,8 +1,8 @@
 # Hello Teapot
 
-This displays a spinning teapot with the video clip from `hello_video` texture-mapped onto its surface. It's pretty impressive! You may recognise the teapot model if you’re familiar with a piece of software called [Blender](https://en.wikipedia.org/wiki/Blender_(software)). This demonstrates OpenGL ES rendering and video decoding/playback at the same time.
+这会显示一个旋转的茶壶，其视频剪辑来自`hello_video`纹理映射到其表面。真是令人印象深刻！如果您熟悉一款名为[Blender](https://en.wikipedia.org/wiki/Blender_(software))的软件，则可以识别茶壶模型。这同时演示了OpenGL ES渲染和视频解码/播放。
 
-![Teapot](images/teapot.jpg)
+![Teapot](https://github.com/White-Album-Lab/raspberry-pi-docs-cn/blob/master/docs/usage/demos/images/teapot.jpg)
 
 ```bash
 cd ..
@@ -10,13 +10,13 @@ cd hello_teapot
 ls
 ```
 
-Notice the green `.bin` file? OK, run it!
+注意到绿色的`.bin`文件了吗？ 好的，运行它！
 
 ```bash
 ./hello_teapot.bin
 ```
 
-You may receive the following error when you try to run this demo:  
+当您尝试运行此演示时，您可能会收到以下错误：
 
 ```bash
 Note: ensure you have sufficient gpu_mem configured
@@ -24,34 +24,34 @@ eglCreateImageKHR:  failed to create image for buffer 0x1 target 12465 error 0x3
 eglCreateImageKHR failed.
 ```
 
-Don’t worry though; if you see this error, you just need to alter one configuration setting to make it work.  
+不过不要担心；如果看到此错误，则只需更改一个配置设置即可使其工作。
 
-The error means the GPU (graphics processing unit) does not have enough memory to run the demo. It’s the GPU that does all the heavy lifting when drawing 3D graphics to the screen, a bit like the graphics card in a gaming PC. The Raspberry Pi shares its memory/RAM between the CPU and GPU, and by default is configured to only give 64 MB of RAM to the GPU. If we increase this to 128 MB that should fix the problem.
+该错误表示GPU（图形处理单元）没有足够的内存来运行演示。当将3D图形绘制到屏幕上时，正是GPU承担了所有繁重的工作，有点像游戏PC中的图形卡。树莓派在CPU和GPU之间共享其内存（RAM），并且默认情况下配置为仅给GPU提供64 MB的RAM。如果将其增加到128 MB，应该可以解决该问题。
 
-To do that, you'll need to enter the following command:
+为此，您需要输入以下命令：
 
 ```bash
 sudo raspi-config
 ```
 
-This will open up a menu on a blue background. Perform the following actions:
+这将在蓝色背景上打开一个菜单。执行以下操作：
 
-- Go to Advanced Options.
-- Go to Memory Split.
-- Delete `64` and enter `128` instead. Press `enter`.
-- Go down to Finish.
-- Click Yes to reboot.
+- 转到高级选项（Advanced Options）。
+- 转到内存分割（Memory Split）。
+- 删除`64`，然后输入`128`。按`输入`。
+- 选`down`来完成。
+- 点击Yes并重启（reboot）.
 
-After you have logged back in, enter the following command to get back to the `hello_teapot` demo:
+重新登录后，输入以下命令以返回`hello_teapot`演示：
 
 ```bash
 cd /opt/vc/src/hello_pi/hello_teapot
 ```
 
-Now try and run it again, and you should find it will work.
+现在尝试再次运行它，您应该会发现它可以工作。
 
 ```bash
 ./hello_teapot.bin
 ```
 
-The demo will run forever until you quit. To exit the demo press `Ctrl + C`. 
+该演示将永远运行直到您退出。 要退出演示，请按Ctrl +C。
