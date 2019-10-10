@@ -1,17 +1,17 @@
-# Hello World Demo
+# Hello World 示例
 
-First, let's do a quick test that will ensure the previous compilation step worked correctly. This rather boring program will only display the text `Hello world!` but if it works correctly then we know all the other demos should work too, and we can make more interesting programs run.
+首先，让我们进行一次快速测试，以确保先前的编译步骤正确运行。这个相当无聊的程序只会显示文本`Hello world！`，但是如果它可以正常工作，那么我们知道所有其他演示也应该可以工作，并且我们可以运行更多有趣的程序。
 
-Enter the following commands to go inside the `hello_world` folder and list the files:
+输入以下命令进入`hello_world`文件夹并列出文件：
 
 ```bash
 cd hello_world
 ls
 ```
 
-You’ll notice the `.bin` file is shown in green; this is because it is an executable file. This means that it is the file we run to launch the program.
+您会注意到`.bin`文件显示为绿色；这是因为它是一个可执行文件。这意味着它是我们运行以启动程序的文件。
 
-Use the following command to run the demo. You need the `./` to specify the current directory; otherwise the Linux system folders will be searched for the filename you type.
+使用以下命令运行演示。您需要`./`来指定当前目录；否则，将在Linux系统文件夹中搜索您键入的文件名。
 
 ```bash
 ./hello_world.bin
