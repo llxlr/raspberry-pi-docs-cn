@@ -1,23 +1,23 @@
-# Root user/sudo
+# 根用户/sudo
 
-The Linux operating system is a multi-user operating system which allows multiple users to log in and use the computer. To protect the computer (and the privacy of other users), the users' abilities are restricted. 
+Linux操作系统是一种多用户操作系统，它允许多个用户登录并使用计算机。为了保护计算机（以及其他用户的隐私），限制了用户的能力。
 
-Most users are allowed to run most programs, and to save and edit files stored in their own home folder. Normal users are not normally allowed to edit files in other users' folders or any of the system files. There's a special user in Linux known as the **superuser**, which is usually given the username `root`. The superuser has unrestricted access to the computer and can do almost anything.
+允许大多数用户运行大多数程序，以及保存和编辑存储在其自己的主文件夹中的文件。 通常不允许普通用户编辑其他用户文件夹中的文件或任何系统文件。Linux中有一个特殊的用户，称为`超级用户`，通常为用户名`root`。超级用户可以不受限制地访问计算机，并且几乎可以执行任何操作。
 
 ## sudo
 
-You won't normally log into the computer as `root`, but you can use the `sudo` command to provide access as the superuser. If you log into your Raspberry Pi as the `pi` user, then you're logging in as a normal user. You can run commands as the `root` user by using the `sudo` command before the program you want to run. 
+您通常不会以`root`身份登录计算机，但可以使用`sudo`命令以超级用户身份提供访问权限。如果您以`pi`用户身份登录树莓派，那么您将以普通用户身份登录。您可以在要运行的程序之前使用`sudo`命令以`root`用户身份运行命令。
 
-For example, if you want to install additional software on Raspbian then you normally use the `apt-get` tool. To update the list of available software, you need to prefix the `apt-get` command with sudo:
+例如，如果要在Raspbian上安装其他软件，则通常使用`apt-get`工具。要更新可用软件列表，您需要在`apt-get`命令前加上`sudo`前缀：
 
 `sudo apt-get update`
 
-Find out more about the [apt commands](../software/apt.md).
+查找有关[apt命令](docs/linux/usage/software/apt.md)的更多信息。
 
-You can also run a superuser shell by using `sudo su`. When running commands as a superuser there's nothing to protect against mistakes that could damage the system. It's recommended that you only run commands as the superuser when required, and to exit a superuser shell when it's no longer needed.
+您也可以使用`sudo su`运行超级用户shell程序。当以超级用户身份运行命令时，没有任何措施可以防止可能会损坏系统的错误。建议您仅在需要时以超级用户身份运行命令，并在不再需要时退出超级用户shell程序。
 
-## Who can use sudo?
+## 谁可以使用sudo？
 
-It would defeat the point of the security if anyone could just put `sudo` in front of their commands, so only approved users can use `sudo` to gain administrator privileges. The `pi` user is included in the `sudoers` file of approved users. To allow other users to act as a superuser you can add the user to the `sudo` group with `usermod`, edit the `/etc/sudoers` file, or add them using `visudo`.
+如果任何人都可以在命令前放置`sudo`，则会破坏安全性，因此只有获得批准的用户才能使用`sudo`来获得管理员特权。`pi`用户包含在已批准用户的`sudoers`文件中。要允许其他用户充当超级用户，您可以使用`usermod`将用户添加到sudo组中，编辑`/etc/sudoers`文件，或使用`visudo`添加它们。
 
-[Find out more about users](users.md).
+[了解有关用户的更多信息](docs/linux/usage/users.md)。
