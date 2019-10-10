@@ -2,7 +2,7 @@
 
 Python是一种出色而强大的编程语言，易于使用（易于阅读和编写），借助Raspberry Pi，您可以将项目连接到现实世界。
 
-![Python logo](docs/usage/python/images/python-logo.png)
+![Python logo](https://github.com/White-Album-Lab/raspberry-pi-docs-cn/blob/master/docs/usage/python/images/python-logo.png)
 
 Python的语法非常简洁，强调可读性，并使用标准的英语关键字。首先从桌面打开IDLE。
 
@@ -10,7 +10,7 @@ Python的语法非常简洁，强调可读性，并使用标准的英语关键�
 
 对Python最简单的介绍是通过Python开发环境IDLE。 从桌面或应用程序菜单中打开IDLE：
 
-![Python在应用菜单](docs/usage/python/images/app-menu-python3.png)
+![Python在应用菜单](https://github.com/White-Album-Lab/raspberry-pi-docs-cn/blob/master/docs/usage/python/images/app-menu-python3.png)
 
 IDLE为您提供了一个REPL（读取，评估，打印，循环），提示您可以输入Python命令。 因为它是REPL，所以您甚至可以在不使用`print`的情况下将命令输出打印到屏幕上。
 
@@ -176,7 +176,7 @@ for i in 3:
 TypeError: 'int' object is not iterable
 ```
 
-![Python error](docs/usage/python/images/python-error.png)
+![Python error](https://github.com/White-Album-Lab/raspberry-pi-docs-cn/blob/master/docs/usage/python/images/python-error.png)
 
 但是，您可以使用range函数来创建可迭代的对象：
 
@@ -236,7 +236,7 @@ print(n)
 
 你可以在一个标准[编辑器](docs/linux/usage/text-editors.md) 写Python文件，像是Vim，Nano，或者LeafPad, 然后在命令行运行Python脚本。只需导向文件存储的目录（使用cd和ls命令）并使用python3运行即可，例如`python3 hello.py`
 
-![Python命令行](docs/usage/python/images/run-python.png)
+![Python命令行](https://github.com/White-Album-Lab/raspberry-pi-docs-cn/blob/master/docs/usage/python/images/run-python.png)
 
 ## 其他使用Python的方式
 
@@ -295,7 +295,13 @@ Return the number of items of a sequence or mapping.
 {0: 0, 1: 1, 2: 8, 3: 27, 4: 64, 5: 125, 6: 216, 7: 343, 8: 512, 9: 729, 10: 1000, 11: 1331}
 ```
 
-![Python vs ipython](docs/usage/python/images/python-vs-ipython.png)
+![Python vs ipython](https://github.com/White-Album-Lab/raspberry-pi-docs-cn/blob/master/docs/usage/python/images
+
+
+
+
+
+/python-vs-ipython.png)
 
 您可以使用 <kbd>Up/Down</kbd> 键（如在python中）来查看在REPL中输入的命令的历史记录。历史记录还会保留到下一个会话，因此您可以退出`ipython`并返回（或在v2/3之间切换），历史记录仍然存在。使用`Ctrl + D`退出。
 
