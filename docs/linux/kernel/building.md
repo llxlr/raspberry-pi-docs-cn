@@ -1,18 +1,18 @@
-# Kernel building
+# 内核构建
 
-There are two main methods for building the kernel. You can build locally on a Raspberry Pi, which will take a long time; or you can cross-compile, which is much quicker, but requires more setup.
+构建内核有两种主要方法。您可以在树莓派上本地构建，这将需要很长时间。或者您可以交叉编译，这更快，但需要更多设置。
 
-## Local building
+## 本地构建
 
-On a Raspberry Pi, first install the latest version of [Raspbian](https://www.raspberrypi.org/downloads/). Then boot your Pi, plug in Ethernet to give you access to the sources, and log in.
+在树莓派上，首先安装[Raspbian](https://www.raspberrypi.org/downloads/)的最新版本。然后启动您的树莓派，插入以太网以访问源，然后登录。
 
-First install Git and the build dependencies:
+首先安装Git和构建依赖项：
 
 ```bash
 sudo apt-get install git bc bison flex libssl-dev
 ```
 
-Next get the sources, which will take some time:
+接下来获取源，这将需要一些时间：
 
 ```bash
 git clone --depth=1 https://github.com/raspberrypi/linux
@@ -20,25 +20,25 @@ git clone --depth=1 https://github.com/raspberrypi/linux
 
 <a name="choosing_sources"></a>
 
-### Choosing sources
+### 选择源
 
-The `git clone` command above will download the current active branch (the one we are building Raspbian images from) without any history. Omitting the `--depth=1` will download the entire repository, including the full history of all branches, but this takes much longer and occupies much more storage.
+上面的git clone命令将下载当前活动的分支（我们正在从中构建Raspbian映像的分支），而没有任何历史记录。省略`--depth = 1`将会下载整个存储库，包括所有分支的全部历史记录，但这会花费更长的时间并占用更多的存储空间。
 
-To download a different branch (again with no history), use the `--branch` option:
+要下载其他分支（同样没有历史记录），请使用`--branch`选项：
 
 ```bash
 git clone --depth=1 --branch rpi-4.18.y https://github.com/raspberrypi/linux
 ```
 
-Refer to the [original GitHub repository](https://github.com/raspberrypi/linux) for information about the available branches.
+有关可用分支的信息，请参考[原始GitHub存储库](https://github.com/raspberrypi/linux)。
 
-### Kernel configuration
+### 内核配置
 
-Configure the kernel; as well as the default configuration, you may wish to [configure your kernel in more detail](configuring.md) or [apply patches from another source](patching.md), to add or remove required functionality:
+配置内核；以及默认配置，您可能希望[更详细地配置内核](docs/linux/kernel/configuring.md)或[从其他来源应用补丁](docs/linux/kernel/patching.md)，以添加或删除所需的功能：
 
-Run the following commands, depending on your Raspberry Pi version.
+运行以下命令，具体取决于您的树莓派版本。
 
-### Raspberry Pi 1, Pi Zero, Pi Zero W, and Compute Module default build configuration
+### 树莓派 1，树莓派 Zero，树莓派 Zero W和计算模块的默认构建配置
 
 ```bash
 cd linux
@@ -46,73 +46,47 @@ KERNEL=kernel
 make bcmrpi_defconfig
 ```
 
-### Raspberry Pi 2, Pi 3, Pi 3+, and Compute Module 3 default build configuration
-
-```bash
-cd linux
-KERNEL=kernel7
-make bcm2709_defconfig
-```
-
-Build and install the kernel, modules, and Device Tree blobs; this step takes a **long** time:
-
-```bash
-make -j4 zImage modules dtbs
-sudo make modules_install
-sudo cp arch/arm/boot/dts/*.dtb /boot/
-sudo cp arch/arm/boot/dts/overlays/*.dtb* /boot/overlays/
-sudo cp arch/arm/boot/dts/overlays/README /boot/overlays/
-sudo cp arch/arm/boot/zImage /boot/$KERNEL.img
-```
-
-**Note**: On a Raspberry Pi 2/3, the `-j4` flag splits the work between all four cores, speeding up compilation significantly.
-
-## Cross-compiling
-
-First, you will need a suitable Linux cross-compilation host. We tend to use Ubuntu; since Raspbian is 
-also a Debian distribution, it means many aspects are similar, such as the command lines.
-
-You can either do this using VirtualBox (or VMWare) on Windows, or install it directly onto your computer. For reference, you can follow instructions online [at Wikihow](http://www.wikihow.com/Install-Ubuntu-on-VirtualBox).
-
-### Install toolchain
-
-Use the following command to download the toolchain to the home folder:
+### 树莓派 2，树莓派 3，树莓派 3+和计算模块3默认构建配置
 
 ```bash
 git clone https://github.com/raspberrypi/tools ~/tools
 ```
 
-Updating the $PATH environment variable makes the system aware of file locations needed for cross-compilation. On a 32-bit host system you can update and reload it using:
+更新`$ PATH`环境变量可使系统知道交叉编译所需的文件位置。在32位主机系统上，您可以使用以下命令进行更新和重新加载：
+
 ```bash
 echo PATH=\$PATH:~/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin >> ~/.bashrc
 source ~/.bashrc
 ```
-If you are on a 64-bit host system, you should use:
+
+如果您使用的是64位主机系统，则应使用：
+
 ```bash
 echo PATH=\$PATH:~/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin >> ~/.bashrc
 source ~/.bashrc
 ```
-### Get sources
+### 获取资源
 
-To download the minimal source tree for the current branch, run:
+要下载当前分支的最小源代码树，请运行：
 
 ```bash
 git clone --depth=1 https://github.com/raspberrypi/linux
 ```
 
-See [**Choosing sources**](#choosing_sources) above for instructions on how to choose a different branch.
+有关如何选择其他分支的说明，请参见上面的[**选择源**](＃choosing_sources)。
 
-### Build sources
+### 构建资源
 
-To build the sources for cross-compilation, make sure you have the dependencies needed on your machine by executing:
+要构建用于交叉编译的源，请通过执行以下命令确保您对计算机具有所需的依赖关系：
+
 ```bash
 sudo apt-get install git bison flex libssl-dev
 ```
-If you find you need other things, please submit a pull request to change the documentation.
+如果您发现需要其他东西，请提交请求请求以更改文档。
 
-Enter the following commands to build the sources and Device Tree files:
+输入以下命令来构建源文件和设备树文件：
 
-For Pi 1, Pi Zero, Pi Zero W, or Compute Module:
+对于树莓派 1，树莓派 Zero，树莓派 Zero W或计算模块：
 
 ```bash
 cd linux
@@ -120,7 +94,7 @@ KERNEL=kernel
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcmrpi_defconfig
 ```
 
-For Pi 2, Pi 3, Pi 3+, or Compute Module 3:
+对于树莓派 2，树莓派 3，树莓派 3+或计算模块3：
 
 ```bash
 cd linux
@@ -128,19 +102,19 @@ KERNEL=kernel7
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcm2709_defconfig
 ```
 
-Then, for both:
+然后，对于两个：
 
 ```bash
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- zImage modules dtbs
 ```
 
-**Note**: To speed up compilation on multiprocessor systems, and get some improvement on single processor ones, use `-j n`, where n is the number of processors * 1.5. Alternatively, feel free to experiment and see what works!
+**注意**: 为了加快在多处理器系统上的编译并在单处理器系统上获得一些改进，请使用`-j n`，其中n是处理器数*1.5。另外，您也可以尝试一下，看看有什么用！
 
-### Install directly onto the SD card
+### 直接安装到SD卡上
 
-Having built the kernel, you need to copy it onto your Raspberry Pi and install the modules; this is best done directly using an SD card reader.
+构建内核之后，您需要将其复制到树莓派上并安装模块。最好直接使用SD卡读卡器完成此操作。
 
-First, use `lsblk` before and after plugging in your SD card to identify it. You should end up with something like this:
+首先，在插入SD卡之前和之后使用`lsblk`进行识别。 您应该以如下形式结束：
 
 ```
 sdb
@@ -148,9 +122,9 @@ sdb
    sdb2
 ```
 
-with `sdb1` being the FAT (boot) partition, and `sdb2` being the ext4 filesystem (root) partition.
+其中sdb1是FAT（引导）分区，而sdb2是ext4文件系统（根）分区。
 
-If it's a NOOBS card, you should see something like this:
+如果是NOOBS卡，则应该看到以下内容：
 
 ```
 sdb
@@ -161,9 +135,9 @@ sdb
   sdb7
 ```
 
-with `sdb6` being the FAT (boot) partition, and `sdb7` being the ext4 filesystem (root) partition.
+其中sdb6是FAT（引导）分区，而sdb7是ext4文件系统（根）分区。
 
-Mount these first, adjusting the partition numbers for NOOBS cards:
+首先安装这些，并调整NOOBS卡的分区号：
 
 ```bash
 mkdir mnt
@@ -173,13 +147,13 @@ sudo mount /dev/sdb1 mnt/fat32
 sudo mount /dev/sdb2 mnt/ext4
 ```
 
-Next, install the modules:
+接下来，安装模块：
 
 ```bash
 sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- INSTALL_MOD_PATH=mnt/ext4 modules_install
 ```
 
-Finally, copy the kernel and Device Tree blobs onto the SD card, making sure to back up your old kernel:
+最后，将内核和设备树blob复制到SD卡上，确保备份旧内核：
 
 ```bash
 sudo cp mnt/fat32/$KERNEL.img mnt/fat32/$KERNEL-backup.img
@@ -191,12 +165,12 @@ sudo umount mnt/fat32
 sudo umount mnt/ext4
 ```
 
-Another option is to copy the kernel into the same place, but with a different filename - for instance, kernel-myconfig.img - rather than overwriting the kernel.img file. You can then edit the config.txt file to select the kernel that the Pi will boot into:
+另一种选择是将内核复制到同一位置，但使用不同的文件名（例如，kernel-myconfig.img），而不是覆盖kernel.img文件。然后，您可以编辑config.txt文件以选择Pi引导进入的内核：
 
 ```
 kernel=kernel-myconfig.img
 ```
 
-This has the advantage of keeping your kernel separate from the kernel image managed by the system and any automatic update tools, and allowing you to easily revert to a stock kernel in the event that your kernel cannot boot.
+这样做的好处是，可以使内核与系统和任何自动更新工具管理的内核映像分开，并允许您在内核无法启动的情况下轻松地恢复到普通内核。
 
-Finally, plug the card into the Pi and boot it!
+最后，将卡插入树莓派并启动！
