@@ -1,162 +1,161 @@
-# Linux commands
+# Linux命令
 
-Here are some fundamental and common Linux commands with example usage:
+以下是一些基本的和常见的Linux命令以及示例用法：
 
-## Filesystem
+## 文件系统
 
 ### ls
 
-The `ls` command lists the content of the current directory (or one that is specified). It can be used with the `-l` flag to display additional information (permissions, owner, group, size, date and timestamp of last edit) about each file and directory in a list format. The `-a` flag allows you to view files beginning with `.` (i.e. dotfiles).
+`ls`命令列出当前目录（或指定的目录）的内容。它可以与`-l`标志一起使用，以列表格式显示有关每个文件和目录的其他信息（权限，所有者，组，大小，日期和上次编辑的时间戳）。`-a`标志可让您查看以`.`开头的文件（即dotfiles）（译者：也就是隐藏文件和文件夹）。
 
 ### cd
 
-Using `cd` changes the current directory to the one specified. You can use relative (i.e. `cd directoryA`) or absolute (i.e. `cd /home/pi/directoryA`) paths.
+使用`cd`将当前目录更改为指定的目录。你可以使用相对路径（即`cd directoryA`）或绝对路径（即`cd /home/pi/directoryA`）。
 
 ### pwd
 
-The `pwd` command displays the name of the present working directory: on a Raspberry Pi, entering `pwd` will output something like `/home/pi`.
+`pwd`命令显示当前工作目录的名称：在树莓派上，输入pwd将输出类似`/home/pi`的内容。
 
 ### mkdir
 
-You can use `mkdir` to create a new directory, e.g. `mkdir newDir` would create the directory `newDir` in the present working directory.
+您可以使用`mkdir`创建一个新目录，例如`mkdir newDir`将在当前工作目录中创建目录`newDir`。
 
 ### rmdir
 
-To remove empty directories, use `rmdir`. So, for example, `rmdir oldDir` will remove the directory `oldDir` only if it is empty.
+要删除空目录，使用`rmdir`。因此，例如，`rmdir oldDir`仅在目录为空时才会删除目录`oldDir`。
 
 ### rm
 
-The command `rm`removes the specified file (or recursively from a directory when used with `-r`). Be careful with this command: files deleted in this way are mostly gone for good!
+命令rm删除指定的文件（或与`-r`一起使用时从目录中递归删除）。使用此命令时要小心：以这种方式删除的文件基本上永远消失了！（译者：不要用`sudo rm -rf /*`，这一点都不好玩，因为会删掉所有文件，死的连渣都不剩，不要回复！不要回复！）
 
 ### cp
 
-Using `cp` makes a copy of a file and places it at the specified location (this is similar to copying and pasting). For example, `cp ~/fileA /home/otherUser/` would copy the file `fileA` from your home directory to that of the user `otherUser` (assuming you have permission to copy it there). This command can either take `FILE FILE` (`cp fileA fileB`), `FILE DIR` (`cp fileA /directoryB/`) or `-r DIR DIR` (which recursively copies the contents of directories) as arguments.
+使用`cp`可以复制文件并将其放置在指定的位置（这类似于复制和粘贴）。例如，`cp 〜/fileA /home/otherUser/`会将文件`fileA`从您的主目录复制到用户`otherUser`的文件中（假设您有权在此处复制它）。此命令可以将`FILE FILE`（`cp fileA fileB`），`FILE DIR`（cp fileA /directoryB/`）或`-r DIR DIR`（递归地复制目录的内容）作为参数。
 
 ### mv
 
-The `mv` command moves a file and places it at the specified location (so where `cp` performs a 'copy-paste', `mv` performs a 'cut-paste'). The usage is similar to `cp`. So `mv ~/fileA /home/otherUser/` would move the file `fileA` from your home directory to that of the user otherUser. This command can either take `FILE FILE` (`mv fileA fileB`), `FILE DIR` (`mv fileA /directoryB/`) or `DIR DIR` (`mv /directoryB /directoryC`) as arguments. This command is also useful as a method to rename files and directories after they've been created.
+`mv`命令移动文件并将其放置在指定位置（因此，`cp`执行`复制粘贴`的作用，`mv`执行`剪切粘贴`的作用）。用法类似于`cp`。所以`mv 〜/fileA /home/otherUser/`会将文件`fileA`从您的主目录移动到用户`otherUser`的目录中。 该命令可以将`FILE FILE`（`mv fileA fileB`），`FILE DIR`（`mv fileA /directoryB/`）或`DIR DIR`（`mv /directoryB /directoryC`）作为参数。创建文件和目录后，此命令也可用作重命名文件和目录的方法。
 
 ### touch
 
-The command `touch` sets the last modified time-stamp of the specified file(s) or creates it if it does not already exist.
+命令`touch`设置指定文件的最后修改时间戳，如果尚不存在，则创建它。
 
 ### cat
 
-You can use `cat` to list the contents of file(s), e.g. `cat thisFile` will display the contents of `thisFile`. Can be used to list the contents of multiple files, i.e. `cat *.txt` will list the contents of all `.txt` files in the current directory.
+您可以使用`cat`列出文件的内容，例如`cat thisFile`将显示`thisFile`的内容。可以用来列出多个文件的内容，即`cat *.txt`将列出当前目录中所有`.txt`文件的内容。
 
 ### head
 
-The `head` command displays the beginning of a file. Can be used with `-n` to specify the number of lines to show (by default ten), or with `-c` to specify the number of bytes.
+`head`命令显示文件的开头。可以与`-n`一起使用以指定要显示的行数（默认为10），或与`-c`一起使用以指定字节数。
 
 ### tail
 
-The opposite of `head`, `tail` displays the end of a file. The starting point in the file can be specified either through `-b` for 512 byte blocks, `-c` for bytes, or `-n` for number of lines.
+与`head`相反，`tail`显示文件的结尾。可以通过`-b`为512字节块指定文件的起点，为字节为`-c`表示行数，或者通过`-n`为行数指定文件的起点。
 
 ### chmod
 
-You would normally use `chmod` to change the permissions for a file. The `chmod` command can use symbols `u` (user that owns the file), `g` (the files group) ,  and `o` (other users) and the permissions `r` (read), `w` (write), and `x` (execute). Using `chmod u+x *filename*` will add execute permission for the owner of the file.
+通常，您可以使用`chmod`来更改文件的权限。chmod命令可以使用符号`u`（拥有文件的用户），`g`（文件组）和`o`（其他用户）以及权限`r`（读取），`w`（ 写）和`x`（执行）。 使用`chmod u+x *filename*`将为文件所有者添加执行权限。
 
 ### chown
 
-The `chown` command changes the user and/or group that owns a file. It normally needs to be run as root using sudo e.g. `sudo chown pi:root *filename*` will change the owner to pi and the group to root. 
+`chown`命令更改拥有文件的用户或组。通常需要使用sudo以root身份运行。`sudo chown pi:root *filename*`会将所有者更改为`pi`，将组更改为`root`。
 
 ### ssh
 
-`ssh` denotes the secure shell. Connect to another computer using an encrypted network connection.
-For more details see [SSH (secure shell)](../../remote-access/ssh/)
+ssh表示安全shell。使用加密的网络连接连接到另一台计算机。
+
+有关更多详细信息，请参见[SSH（安全shell）](docs/remote-access/ssh/)
 
 ### scp
 
-The `scp` command copies a file from one computer to another using `ssh`.
-For more details see [SCP (secure copy)](../../remote-access/ssh/scp.md)
+scp命令使用ssh将文件从一台计算机复制到另一台计算机。
+
+有关更多详细信息，请参见[SCP（安全副本）](docs/remote-access/ssh/scp.md)
 
 ### sudo
 
-The `sudo` command enables you to run a command as a superuser, or another user. Use `sudo -s` for a superuser shell.
-For more details see [Root user / sudo](root.md)
+`sudo`命令使您能够以超级用户或其他用户身份运行命令。将`sudo -s`用于超级用户shell。
+
+有关更多详细信息，请参见[root用户/sudo](docs/linux/usage/root.md)
 
 ### dd
 
-The `dd` command copies a file converting the file as specified. It is often used to copy an entire disk to a single file or back again. So, for example, `dd if=/dev/sdd of=backup.img` will create a backup image from an SD card or USB disk drive at /dev/sdd. Make sure to use the correct drive when copying an image to the SD card as it can overwrite the entire disk.
+`dd`命令复制一个文件，将其转换为指定的文件。它通常用于将整个磁盘复制到单个文件或再次复制回来。因此，例如，`dd if=/dev/sdd of=backup.img`将从`/dev/sdd`的SD卡或USB磁盘驱动器创建备份映像。将映像复制到SD卡时，请确保使用正确的驱动器，因为它会覆盖整个磁盘。
 
 ### df
 
-Use `df` to display the disk space available and used on the mounted filesystems. Use `df -h` to see the output in a human-readable format using M for MBs rather than showing number of bytes. 
+使用`df`显示已安装文件系统上可用和已使用的磁盘空间。使用`df -h`以人类可读的格式查看输出，使用M表示MB，而不显示字节数。
 
 ### unzip
 
-The `unzip` command extracts the files from a compressed zip file. 
+`unzip`命令从压缩的`zip`文件中提取文件。
 
 ### tar
 
-Use `tar` to store or extract files from a tape archive file. It can also reduce the space required by compressing the file similar to a zip file. 
+使用`tar`来存储或从磁带存档文件中提取文件。它也可以通过压缩类似于`zip`文件的文件来减少所需的空间。
 
-To create a compressed file, use `tar -cvzf *filename.tar.gz* *directory/*`
-To extract the contents of a file, use `tar -xvzf *filename.tar.gz*`
+要创建压缩文件，请使用`tar -cvzf *filename.tar.gz* *directory/*`
 
+要提取文件的内容，请使用`tar -xvzf *filename.tar.gz*`
 
 ### pipes
 
-A pipe allows the output from one command to be used as the input for another command. The pipe symbol is a vertical line `|`. For example, to only show the first ten entries of the `ls` command it can be piped through the head command `ls | head`
+管道允许一个命令的输出用作另一命令的输入。管道符号是垂直线`|`。例如，仅显示`ls`命令的前十个条目，可以通过`head`命令`ls | head`
 
 ### tree
 
-Use the `tree` command to show a directory and all subdirectories and files indented as a tree structure.
+使用`tree`命令显示目录以及缩进为树形结构的所有子目录和文件。
 
 ### &
 
-Run a command in the background with `&`, freeing up the shell for future commands. 
+使用`＆`在后台运行命令，释放shell程序以供将来使用。
 
 ### wget
 
-Download a file from the web directly to the computer with `wget`. So `wget https://www.raspberrypi.org/documentation/linux/usage/commands.md` will download this file to your computer as `commands.md`
+使用`wget`从网上直接下载文件到计算机。因此`wget https://www.raspberrypi.org/documentation/linux/usage/commands.md`会将这个文件作为`commands.md`下载到您的计算机上。
 
 ### curl
 
-Use `curl` to download or upload a file to/from a server. By default, it will output the file contents of the file to the screen.
-
+使用`curl`将文件下载到服务器或从服务器上传文件。默认情况下，它将文件的文件内容输出到屏幕。
 
 ### man
 
-Show the manual page for a file with `man`. To find out more, run `man man` to view the manual page of the man command. 
+显示带有`man`的文件的手册页。要了解更多信息，请运行`man man`以查看man命令的手册页。
 
-
-## Search
+## 搜索
 
 ### grep
 
-Use `grep` to search inside files for certain search patterns. For example, `grep "search" *.txt` will look in all the files in the current directory ending with .txt for the string search.
+使用`grep`在文件内部搜索某些搜索模式。例如，`grep "search" *.txt`将在当前目录中以`.txt`结尾的所有文件中查找字符串`search`。
 
-The `grep` command supports regular expressions which allows special letter combinations to be included in the search.
+`grep`命令支持正则表达式，该正则表达式允许在搜索中包含特殊的字母组合。
 
 ### awk
 
-`awk` is a programming language useful for searching and manipulating text files.
+`awk`是一种编程语言，可用于搜索和处理文本文件。
 
 ### find
 
-The `find` command searches a directory and subdirectories for files matching certain patterns. 
-
+`find`命令在目录和子目录中搜索与某些模式匹配的文件。
 
 ### whereis
 
-Use `whereis` to find the location of a command. It looks through standard program locations until it finds the requested command.
+使用`whereis`查找命令的位置。它遍历标准程序位置，直到找到请求的命令。
 
-
-## Networking
+## 联网
 
 ### ping
 
-The `ping` utility is usually used to check if communication can be made with another host. It can be used with default settings by just specifying a hostname (e.g. `ping raspberrypi.org`) or an IP address (e.g. `ping 8.8.8.8`). It can specify the number of packets to send with the `-c` flag.
+`ping`实用程序通常用于检查是否可以与其他主机进行通信。仅指定主机名（例如`ping raspberrypi.org`）或IP地址（例如`ping 8.8.8.8`）即可将其用于默认设置。它可以用`-c`标志指定要发送的数据包数量。
 
 ### nmap
 
-`nmap` is a network exploration and scanning tool. It can return port and OS information about a host or a range of hosts. Running just `nmap` will display the options available as well as example usage.
+`nmap`是一种网络探索和扫描工具。它可以返回有关主机或主机范围的端口和操作系统信息。仅运行`nmap`将显示可用选项以及用法示例。
 
 ### hostname
 
-The `hostname` command displays the current hostname of the system. A privileged (super) user can set the hostname to a new one by supplying it as an argument (e.g. `hostname new-host`).
+`hostname`命令显示系统的当前主机名。特权（超级）用户可以通过提供主机名作为参数来将其设置为新主机名（例如，`hostname new-host`）。
 
 ### ifconfig
 
-Use `ifconfig` to display the network configuration details for the interfaces on the current system when run without any arguments (i.e. `ifconfig`). By supplying the command with the name of an interface (e.g. `eth0` or `lo`) you can then alter the configuration: check the manual page for more details.
+如果运行时不带任何参数（例如，`ifconfig`），请使用`ifconfig`显示当前系统上接口的网络配置详细信息。通过为命令提供接口名称（例如`eth0`或`lo`），您可以更改配置：请查看手册页以获取更多详细信息。
