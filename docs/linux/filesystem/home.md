@@ -1,13 +1,13 @@
-# Home
+# 主文件夹`Home`
 
-When you log into a Pi and open a terminal window, or you boot to the command line instead of the graphical user interface, you start in your home folder; this is located at `/home/pi`, assuming your username is `pi`.
+当您登录树莓派并打开终端窗口，或者启动至命令行而不是图形用户界面时，您将在主文件夹中启动。假设你的用户名为`pi`，则此文件位于`/home/pi`。
 
-This is where the user's own files are kept. The contents of the user's desktop is in a directory here called `Desktop`, along with other files and folders.
+这是保存用户自己的文件的位置。用户桌面的内容以及其他文件和文件夹位于此处称为`Desktop`的目录中。
 
-To navigate to your home folder on the command line, simply type `cd` and press `Enter`. This is the equivalent of typing `cd /home/pi`, where `pi` is your username. You can also use the tilde key (`~`), for example `cd ~`, which can be used to relatively link back to your home folder. For instance, `cd ~/Desktop/` is the same as `cd /home/pi/Desktop`.
+要在命令行上定位到主文件夹，只需键入`cd`并按Enter。这等效于键入`cd /home/pi`，其中`pi`是您的用户名。你也可以使用代字号（`〜`），例如`cd〜`，该键可用于相对链接回您的主文件夹。 例如，`cd 〜/Desktop/`与`cd /home/pi/Desktop`相同。
 
-Navigate to `/home/` and run `ls`, and you'll see the home folders of each of the users on the system.
+定位到`/home/`并运行`ls`，您将看到系统上每个用户的主文件夹。
 
-Note that if logged in as the root user, typing `cd` or `cd ~` will take you to the root user's home directory; unlike normal users, this is located at `/root/` not `/home/root/`. Read more about the [root user](../usage/root.md).
+请注意，如果以root用户身份登录，则输入`cd`或`cd 〜`将带您进入root用户的主目录。与普通用户不同，它位于`/root/`而不是`/home/root/`。详细了解[root用户](docs/usage/root.md)。
 
-If you have files you would not like to lose, you may want to back up your home folder. Read more about [backing up](backup.md).
+如果您不想丢失文件，则可能要备份主文件夹。了解有关[备份](docs/linux/filesystem/backup.md)的更多信息。
