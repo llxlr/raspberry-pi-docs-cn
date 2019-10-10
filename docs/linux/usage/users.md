@@ -1,58 +1,58 @@
-# Linux users
+# Linux用户
 
-User management in Raspbian is done on the command line. The default user is `pi`, and the password is `raspberry`. You can add users and change each user's password.
+Raspbian中的用户管理是在命令行上完成的。默认用户为`pi`，密码为`raspberry`。您可以添加用户并更改每个用户的密码。
 
-## Change your password
+## 更改您的密码
 
-Once you're logged in as the `pi` user, it is highly advisable to use the `passwd` command to change the default password to improve your Pi's security.
+以`pi`用户身份登录后，强烈建议使用`passwd`命令更改默认密码以提高树莓派的安全性。
 
-Enter `passwd` on the command line and press `Enter`. You'll be prompted to enter your current password to authenticate, and then asked for a new password. Press `Enter` on completion and you'll be asked to confirm it. Note that no characters will be displayed while entering your password. Once you've correctly confirmed your password, you'll be shown a success message (`passwd: password updated successfully`), and the new password will apply immediately.
+在命令行上输入`passwd`，然后按`Enter`。系统将提示您输入当前密码进行身份验证，然后要求输入新密码。完成后按`Enter`键，系统将要求您确认。请注意，输入密码时不会显示任何字符。正确确认密码后，将显示一条成功消息（`passwd：密码更新成功`），新密码将立即生效。
 
-If your user has `sudo` permissions, you can change another user's password with `passwd` preceded by the user's username. For example, `sudo passwd bob` will allow you to set the user `bob`'s password, and then some additional optional values for the user such as their name. Just press `Enter` to skip each of these options.
+如果您的用户具有`sudo`权限，则可以使用`passwd`更改其他用户的密码，并在该用户名之前添加该密码。例如，`sudo passwd bob`将允许您设置用户`bob`的密码，然后设置用户的一些其他可选值，例如用户名。只需按Enter键即可跳过这些选项。
 
-### Remove a user's password
+### 删除用户密码
 
-You can remove the password for the user `bob` with `sudo passwd bob -d`.
+您可以使用`sudo passwd bob -d`删除用户`bob`的密码。
 
-## Create a new user
+## 创建一个新用户
 
-You can create additional users on your Raspbian installation with the `adduser` command.
+您可以使用`adduser`命令在Raspbian安装上创建其他用户。
 
-Enter `sudo adduser bob` and you'll be prompted for a password for the new user `bob`. Leave this blank if you don't want a password.
+输入`sudo adduser bob`，系统将提示您输入新用户`bob`的密码。如果您不需要密码，请将此字段留空。
 
-### Home folder
+### 主文件夹
 
-When you create a new user, they will have a home folder in `/home/`. The `pi` user's home folder is at `/home/pi/`.
+创建新用户时，他们将在`/home/`中拥有一个主文件夹。`pi`用户的主文件夹位于`/home/pi/`中。
 
 #### skel
 
-Upon creating a new user, the contents of `/etc/skel/` will be copied to the new user's home folder. You can add or modify dot-files such as the `.bashrc` in `/etc/skel/` to your requirements, and this version will be applied to new users.
+创建新用户后，`/etc/skel/`的内容将被复制到新用户的主文件夹中。您可以根据需要添加或修改`/etc/skel/`中的`.bashrc`文件，并且该版本将适用于新用户。
 
 ## Sudoers
 
-The default `pi` user on Raspbian is a sudoer. This gives the ability to run commands as root when preceded by `sudo`, and to switch to the root user with `sudo su`.
+Raspbian上的默认`pi`用户是一个`sudoer`。 这样可以在以`sudo`开头时以`root`身份运行命令，并以`sudo su`切换为`root`用户。
 
-To add a new user to sudoers, type `sudo visudo` (from a sudoer user) and find the line `root    ALL=(ALL:ALL) ALL`, under the commented header `# User privilege specification`. Copy this line and switch from `root` to the username. To allow passwordless root access, change to `NOPASSWD: ALL`. The example below gives the user `bob` passwordless sudo access:
+要将新用户添加到`sudoers`中，请输入`sudo visudo`（来自sudoer用户），并在带注释的标头`＃用户权限规范`下找到`root ALL=(ALL:ALL)ALL`行。 复制此行，然后从`root`切换到用户名。要允许无密码的`root`访问，请更改为`NOPASSWD:ALL`。以下示例为用户`bob`提供了无密码`sudo`访问权限：
 
 ```bash
 # User privilege specification
-root  ALL=(ALL:ALL) ALL
-bob   ALL = NOPASSWD: ALL
+root  ALL=(ALL:ALL)ALL
+bob   ALL=NOPASSWD:ALL
 ```
 
-Save and exit to apply the changes. Be careful, as it's possible to remove your own sudo rights by accident.
+保存并退出以应用更改。请小心，因为可能会意外删除您自己的`sudo`权利。
 
-You can change the editor the `visudo` command uses (the default is Nano) by entering:
+您可以通过输入以下命令来更改`visudo`命令使用的编辑器（默认为Nano）。
 
 ```bash
 update-alternatives --set editor /usr/bin/vim.tiny
 ```
 
-This sets the editor to Vim.
+这将编辑器设置为Vim。
 
-## Delete a user
+## 删除用户
 
-You can delete a user on your system with the command `userdel`. Apply the `-r` flag to remove their home folder too:
+您可以使用`userdel`命令在系统上删除用户。应用`-r`标志也删除其主文件夹：
 
 ```bash
 sudo userdel -r bob
