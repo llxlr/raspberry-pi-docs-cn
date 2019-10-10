@@ -1,79 +1,79 @@
-# Backups
+# 备份
 
-It is highly recommended that you keep regular backups of any important files. Backups are often not limited to user files; they could include configuration files, databases, installed software, settings, and even an entire snapshot of a system.
+强烈建议您定期备份所有重要文件。备份通常不限于用户文件；它们可能包括配置文件，数据库，已安装的软件，设置，甚至是系统的整个快照。
 
-Here, we'll guide you through some backup techniques for your Raspberry Pi system.
+在这里，我们将指导您完成一些有关树莓派系统的备份技术。
 
-## Home folder
+## 主文件夹
 
-A sensible way to keep your home folder backed up is to use the `tar` command to make a snapshot archive of the folder, and keep a copy of it on your home PC or in cloud storage. To do this, enter the following commands:
+备份主文件夹的明智方法是使用`tar`命令创建该文件夹的快照存档，并将其副本保留在家用PC或云存储中。为此，请输入以下命令：
 
 ```bash
 cd /home/
 sudo tar czf pi_home.tar.gz pi
 ```
 
-This creates a tar archive called `pi_home.tar.gz` in `/home/`. You should copy this file to a USB stick or transfer it to another machine on your network.
+这将在`/home/`中创建一个名为`pi_home.tar.gz`的tar归档文件。您应该将此文件复制到USB记忆棒或将其传输到网络上的另一台计算机。
 
 ## MySQL
 
-If you have MySQL databases running on your Raspberry Pi, it would be wise to keep them backed up too. To back up a single database, use the `mysqldump` command:
+如果您在树莓派上运行了MySQL数据库，那么最好也对其进行备份。要备份单个数据库，请使用`mysqldump`命令：
 
 ```bash
 mysqldump recipes > recipes.sql
 ```
 
-This command will back up the `recipes` database to the file `recipes.sql`. Note that, in this case, no username and password have been supplied to the `mysqldump` command. If you don't have your MySQL credentials in a `.my.cnf` configuration file in your home folder, then supply the username and password with flags:
+此命令会将`recipes`数据库备份到文件`recipes.sql`。注意，在这种情况下，没有向`mysqldump`命令提供用户名和密码。如果您的主文件夹中的`.my.cnf`配置文件中没有MySQL凭据，请提供带有标志的用户名和密码：
 
 ```bash
 mysqldump -uroot -ppass recipes > recipes.sql
 ```
 
-To restore a MySQL database from a dumpfile, pipe the dumpfile into the `mysql` command. Provide credentials, if necessary, and the database name. Note that the database must exist, so create it first:
+要从转储文件恢复MySQL数据库，请将转储文件通过管道传递到mysql命令。提供凭据（如果需要）和数据库名称。请注意，数据库必须存在，因此请首先创建它：
 
 ```bash
 mysql -Bse "create database recipes"
 cat recipes.sql | mysql recipes
 ```
 
-Alternatively, you can use the `pv` command to see a progress meter as the dumpfile is processed by MySQL. This is not installed by default, so install with `sudo apt-get install pv`. This command is useful for large files:
+另外，您可以使用`pv`命令查看进度表，因为转储文件是由MySQL处理的。默认情况下未安装，因此请使用`sudo apt-get install pv`进行安装。此命令对大文件很有用：
 
 ```bash
 pv recipes.sql | mysql recipes
 ```
 
-## SD card image
+## SD卡镜像
 
-It may be sensible for you to keep a copy of the entire SD card image, so you can restore the card if you lose it or it becomes corrupt. You can do this using the same method you'd use to write an image to a new card, but in reverse.
+保留整个SD卡映像的副本可能是明智的，因此，如果丢失或损坏，可以恢复该卡。您可以使用与将图像写入新卡相同的方法来执行此操作，但是相反。
 
-In Linux:
+在Linux中：
 
 ```bash
 sudo dd bs=4M if=/dev/sdb of=raspbian.img
 ```
 
-This will create an image file on your computer which you can use to write to another SD card, and keep exactly the same contents and settings. To restore or clone to another card, use `dd` in reverse:
+这将在您的计算机上创建一个图像文件，您可以使用该图像文件写入另一个SD卡，并保持完全相同的内容和设置。要恢复或克隆到另一张卡，请反向使用`dd`：
 
 ```bash
 sudo dd bs=4M if=raspbian.img of=/dev/sdb
 ```
 
-These files can be very large, and compress well. To compress, you can pipe the output of `dd` to `gzip` to get a compressed file that is significantly smaller than the original size:
+这些文件可能很大，并且压缩得很好。要进行压缩，您可以将dd的输出通过管道传递到`gzip`，以获取比原始大小小得多的压缩文件：
 
 ```bash
 sudo dd bs=4M if=/dev/sdb | gzip > raspbian.img.gz
 ```
 
-To restore, pipe the output of `gunzip` to `dd`:
+要恢复，请将`gunzip`的输出通过管道传递到`dd`：
 
 ```bash
 gunzip --stdout raspbian.img.gz | sudo dd bs=4M of=/dev/sdb
 ```
 
-If you are using a Mac, the commands used are almost exactly the same, but `4M` in the above examples should be replaced with `4m`, with a lower case letter.
+如果您使用的是Mac，则使用的命令几乎完全相同，但是上述示例中的`4M`应替换为小写字母`4m`。
 
-See more about [installing SD card images](../../installation/installing-images/README.md).
+请参阅有关[安装SD卡映像](docs/installation/installing-images/README.md)的更多信息。
 
-## Automation
+## 自动化
 
-You could write a Bash script to perform each of these processes automatically, and even have it performed periodically using [cron](../usage/cron.md).
+您可以编写一个Bash脚本来自动执行所有这些过程，甚至可以使用[cron](docs/usage/cron.md)定期执行该脚本。
