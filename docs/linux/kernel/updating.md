@@ -10,7 +10,7 @@
 
 如果您使用的是已编译的内核，则`rpi-update`将覆盖它，并且您需要[rebuild](docs/linux/kernel/building.md)并重新安装内核。
 
-自定义[configuration](docs/linux/kernel/configuring.md）通常可以在次要内核更新之间进行复制，但是使用`diff`实用工具查看更改内容并在新配置上重复更改更为安全。
+自定义[configuration](docs/linux/kernel/configuring.md)通常可以在次要内核更新之间进行复制，但是使用`diff`实用工具查看更改内容并在新配置上重复更改更为安全。
 
 ### 恢复到当前的Raspbian内核
 
