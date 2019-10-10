@@ -1,12 +1,12 @@
-# Shell scripts
+# Shell脚本
 
-Commands can be combined together in a file which can then be executed. As an example, copy the following into your favourite text editor:
+可以将命令组合到一个文件中，然后可以执行该文件。例如，将以下内容复制到您喜欢的文本编辑器中：
 
 ```bash
-while :
+while:
 do
 echo Raspberry Pi!
 done
 ```
 
-Save this with the name `fun-script`. Before you can run it you must first make it executable; this can be done by using the change mode command `chmod`. Each file and directory has its own set of permissions that dictate what a user can and can't do to it. In this case, by running the command `chmod +x fun-script`, the file `fun-script` will now be executable. You can then run it by typing `./fun-script` (assuming that it's in your current directory). This script infinitely loops and prints `Raspberry Pi!`; to stop it, press `Ctrl + C`. This kills any command that's currently being run in the terminal.
+使用`fun-script`将其保存。在运行它之前，必须首先使其可执行。这可以通过使用更改模式命令`chmod`来完成。每个文件和目录都有其自己的权限集，这些权限决定了用户可以做什么和不能做什么。在这种情况下，通过运行命令`chmod +x fun-script`，文件`fun-script`现在将是可执行的。然后，您可以通过输入`./fun-script`来运行它（假设它在当前目录中）。该脚本无限循环并打印`Raspberry Pi!`。 要停止它，请按`Ctrl +C`。这会终止当前在终端中运行的所有命令。
