@@ -1,69 +1,69 @@
-# Text editors
+# 文本编辑器
 
-On Linux, you have a choice of text editors. Some are easy-to-use but have limited functionality; others require training to use and take a long time to master, but offer incredible functionality.
+在Linux上，您可以选择文本编辑器。有些易于使用，但功能有限；其他人则需要经过培训才能使用，并且需要很长时间才能掌握，但是却提供了令人难以置信的功能。
 
-## Desktop graphical editors
+## 桌面图形编辑器
 
 ### Leafpad
 
-On Raspbian, you'll find an editor called Leafpad. This is a simple editor which opens in a window like a normal application. It allows use of the mouse and keyboard, and has tabs and syntax highlighting.
+在Raspbian上，您会找到一个名为`Leafpad`的编辑器。 这是一个简单的编辑器，可在类似于普通应用程序的窗口中打开。它允许使用鼠标和键盘，并具有选项卡和语法高亮。
 
-You can use keyboard shortcuts, such as `Ctrl + S` to save a file and `Ctrl + X` to exit.
+您可以使用键盘快捷键，例如`Ctrl + S`来保存文件，`Ctrl + X`退出。
 
 ### IDLE
 
-IDLE is a Python REPL and IDE, so you can write and edit Python code in a window and run it from there.
+IDLE是Python REPL和IDE，因此您可以在窗口中编写和编辑Python代码并从那里运行它。
 
-IDLE has independent windows and syntax highlighting. It's somewhat buggy, but it's generally fine for basic use.
+IDLE具有独立的窗口和语法高亮。通常对于基本用途来说还不错。
 
-You can use keyboard shortcuts like `Ctrl + S` to save a file, or `Alt + P` (previous command) and `Alt + N` (next command) in the REPL.
+您可以使用键盘快捷键，例如`Ctrl + S`来保存文件，也可以使用REPL中的`Alt + P`（上一个命令）和`Alt + N`（下一个命令）来保存文件。
 
-Note that IDLE uses Python 2 and IDLE 3 uses Python 3.
+请注意，IDLE使用Python 2，IDLE 3使用Python 3。
 
 ### GVim
 
-See Vim below.
+参见下面的Vim。
 
-## Command-line editors
+## 命令行编辑器
 
 ### Nano
 
-GNU Nano is at the easy-to-use end of command-line editors. It's installed by default, so use `nano somefile.txt` to edit a file, and keyboard shortcuts like `Ctrl + O` to save and `Ctrl + X` to exit.
+`GNU Nano`位于命令行编辑器易于使用的一端。它是默认安装的，因此请使用`nano somefile.txt`来编辑文件，并使用键盘快捷键（例如`Ctrl + O`）保​​存并使用`Ctrl + X`退出。
 
 ### Vi
 
-Vi is a very old (c. 1976) command-line editor, which is available on most UNIX systems and is pre-installed on Raspbian. It's succeeded by Vim (Vi Improved), which requires installation.
+Vi是一个非常古老的命令行编辑器（约于1976年），在大多数UNIX系统上都可用，并且已预先安装在Raspbian上。它是Vim（Vi改进版）的后继产品，需要安装。
 
-Unlike most editors, Vi and Vim have a number of different modes. When you open Vi with `vi somefile.txt`, you start in command mode which doesn't directly permit text entry. Press `i` to switch to insert mode in order to edit the file, and type away. To save the file you must return to command mode, so press the `Escape` key and enter `:w` (followed by `Enter`), which is the command to write the file to disk.
+与大多数编辑器不同，Vi和Vim具有许多不同的模式。当使用`vi somefile.txt`打开Vi时，将以命令模式启动，该模式不允许直接输入文本。按`i`切换到插入模式以编辑文件，然后键入。要保存文件，您必须返回命令模式，因此按`Escape`键并输入`:w`（其后是Enter键），这是将文件写入磁盘的命令。
 
-To search for the word 'raspberry' in a file, make sure you're in command mode (press `Escape`), then type `/raspberry` followed by `n` and `N` to flick forwards/backwards through the results.
+要在文件中搜索`raspberry`一词，请确保您处于命令模式（按`Escape`），然后键入`/raspberry`，然后键入`n`和`N`以向前/向后快速浏览结果 。
 
-To save and exit, enter the command `:wq`. To exit without saving, enter the command `:q!`.
+要保存并退出，请输入命令`:wq`。要不保存而退出：请输入命令`:q!`。
 
-Depending on your keyboard configuration, you may find your cursor keys don't work. In this case, you can use the H-J-K-L keys (which move left, down, up, and right respectively) to navigate the file in command mode.
+根据键盘配置的不同，您可能会发现光标键不起作用。在这种情况下，您可以使用`H`-`J`-`K`-`L`键（分别向左，向下，向上和向右移动）在命令模式下定位文件。
 
 ### Vim
 
-Vim is an extension of Vi and works in much the same way, with a number of improvements. Only Vi is installed by default so to get the full features of Vim, install it with APT:
+Vim是Vi的扩展，工作方式几乎相同，但有许多改进。默认情况下仅安装Vi，因此要获得Vim的全部功能，请与APT一起安装：
 
-```
+```bash
 sudo apt-get install vim
 ```
 
-You can edit a file in Vim with `vim somefile.txt`. Vim also has a graphical version which opens in a window and allows interaction with the mouse. This version is installable separately:
+您可以使用`vim somefile.txt`在Vim中编辑文件。Vim还具有图形版本，可在窗口中打开并允许与鼠标进行交互。此版本可单独安装：
 
-```
+```bash
 sudo apt-get install vim-gnome
 ```
 
-To use the graphical version of Vim, use `gvim somefile.txt`. You can save configuration in a `.vimrc` file in your user's home directory. To learn more about editing in Vi and Vim, you can run `vimtutor` and follow the tutorial.
+要使用Vim的图形版本，请使用`gvim somefile.txt`。您可以将配置保存在用户主目录中的`.vimrc`文件中。要了解有关在Vi和Vim中进行编辑的更多信息，可以运行`vimtutor`并按照教程进行操作。
 
 ### Emacs
 
-Emacs is a GNU command-line text editor; it's powerful, extensible, and customisable. You can install it with APT:
+Emacs是GNU命令行文本编辑器。它功能强大，可扩展且可定制。您可以使用APT安装它：
 
-```
+```bash
 sudo apt-get install emacs
 ```
 
-You can use keyboard combination commands, such as `Ctrl + X Ctrl + S` to save and `Ctrl + X Ctrl + C` to close.
+您可以使用键盘组合命令，例如`Ctrl + X` `Ctrl + S`来保存，而`Ctrl + X` `Ctrl + C`来关闭。
