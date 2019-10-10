@@ -1,6 +1,6 @@
-# Whole Linux file system
+# 整个Linux文件系统
 
-A list of directories is shown below. For more information, please refer to the Linux [Filesystem Hierarchy Standard](https://wiki.debian.org/FilesystemHierarchyStandard).
+目录列表如下所示。有关更多信息，请参考Linux [文件系统层次结构标准](https://wiki.debian.org/FilesystemHierarchyStandard)。
 
 - bin
 
