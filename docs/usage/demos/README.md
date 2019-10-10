@@ -1,48 +1,48 @@
-# Demo Programs
+# Demo程序
 
-Here are some example programs to demonstrate the Pi's capabilities.
+以下是一些示例程序，以演示树莓派的功能。
 
-![Mandelbrot fractal](images/mandelbrot.jpg)
+![Mandelbrot fractal](https://github.com/White-Album-Lab/raspberry-pi-docs-cn/blob/master/docs/usage/demos/images/mandelbrot.jpg)
 
-In order to run these programs you need to be at the command line. Your Pi may boot to the command line (requiring you to enter `startx` to get to the desktop); if so, go straight ahead. Otherwise, use the start button to log out of the desktop.
+为了运行这些程序，您需要在命令行中。树莓派可能会启动到命令行（要求您输入`startx`才能进入桌面）；如果是这样，请继续前进。否则，请使用“开始”按钮注销桌面。
 
 ```bash
 pi@raspberrypi ~ $
 ```
 
-This (above) is the command prompt. It looks difficult to use, but try not to be afraid of it! A CLI or command line interface is actually a very quick and efficient way to use a computer.
+这是命令提示符（上面）。 它看起来很难使用，但请不要害怕！CLI或命令行界面实际上是使用计算机的非常快速有效的方法。
 
-To start, navigate to the `hello_pi` folder where all the demos are stored. Enter the command below to do this. **TIP**: You can use the `TAB` key for auto-complete as you enter commands.
+首先，定位到所有演示文件所在的`hello_pi`文件夹。输入以下命令以执行此操作。提示：您可以在输入命令时使用TAB键自动完成。
 
 ```bash
 cd /opt/vc/src/hello_pi
 ```
 
-The command prompt should now look like the text below. The blue part shows where you are in the file system of the Pi.
+现在，命令提示符应类似于以下文本。蓝色部分显示您在树莓派的文件系统中的位置。
 
 ```bash
 pi@raspberrypi /opt/vc/src/hello_pi $
 ```
 
-If you enter `ls` and press Enter, you’ll see a list of folders; there is one for each demo. Before you can run them, though, they must be compiled. Don’t worry if you don’t understand what this is or why you need to do it; just follow the instructions for now, and we'll learn more about it later on.
+如果输入`ls`并按`Enter`键，则会看到文件夹列表；每个演示都有一个。但是，在运行它们之前，必须先对其进行编译。如果您不了解这是什么或为什么需要这样做，请不要担心。只需立即按照说明进行操作，稍后我们将详细了解。
 
-There is a small shell script supplied in the `hello_pi` folder called rebuild.sh which will do the compiling for you. Enter the following command to run it; ignore the gobbledygook for now!
+在`hello_pi`文件夹中提供了一个名为`rebuild.sh`的shell脚本，它将为您进行编译。输入以下命令以运行它；暂时忽略这货！
 
 ```bash
 ./rebuild.sh
 ```
 
-A lot of text will scroll up the screen now, but for this exercise you can ignore it. It is just the output of the compiler as it works through the demo code. Wait for the command prompt to return before you continue.
+现在，许多文本将在屏幕上滚动，但是对于本练习，您可以忽略它。它只是通过演示代码工作的编译器的输出。等待命令提示符返回，然后继续。
 
-Now we’re finally ready to run some demos!
+现在，我们终于可以开始运行一些演示了！
 
-Demo programs:
+演示程序：
 
-- [Hello world](hello-world.md)
-- [Hello video](hello-video.md)
-- [Hello triangle](hello-triangle.md)
-- [Hello fractal](hello-fractal.md)
-- [Hello teapot](hello-teapot.md)
-- [Hello audio](hello-audio.md)
+- [Hello world](docs/usage/demos/hello-world.md)
+- [Hello video](docs/usage/demos/hello-video.md)
+- [Hello triangle](docs/usage/demos/hello-triangle.md)
+- [Hello fractal](docs/usage/demos/hello-fractal.md)
+- [Hello teapot](docs/usage/demos/hello-teapot.md)
+- [Hello audio](docs/usage/demos/hello-audio.md)
 
-Try more demos in the `hello_pi` folder!
+在`hello_pi`文件夹中尝试更多演示！
