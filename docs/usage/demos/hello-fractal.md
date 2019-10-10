@@ -2,7 +2,7 @@
 
 这一个显示两个叠加的分形，一个在另一个之上。您可以移动鼠标实时更改分形的形状。这也旨在演示OpenGL ES渲染。你们中的某些人可能会意识到这是[Mandelbrot分形](https://en.wikipedia.org/wiki/Mandelbrot_set)。
 
-![Mandelbrot fractal](images/mandelbrot.jpg)
+![Mandelbrot fractal](https://github.com/White-Album-Lab/raspberry-pi-docs-cn/blob/master/docs/usage/demos/images/mandelbrot.jpg)
 
 ```bash
 cd ..
