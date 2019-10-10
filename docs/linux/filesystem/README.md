@@ -4,6 +4,6 @@
 
 ## 目录
 
-- [主文件夹](home.md)
-- [备用](backup.md)
-- [整个文件系统](whole-filesystem.md)
+- [主文件夹](docs/linux/filesystem/home.md)
+- [备份](docs/linux/filesystem/backup.md)
+- [整个文件系统](docs/linux/filesystem/whole-filesystem.md)
