@@ -1,6 +1,6 @@
 # 内核
 
-树莓派的内核存储在GitHub中，可以在[github.com/raspberrypi/linux](https://github.com/raspberrypi/linux）上查看；它紧随主要的[Linux内核](https://github.com/torvalds/linux)之后。
+树莓派的内核存储在GitHub中，可以在[github.com/raspberrypi/linux](https://github.com/raspberrypi/linux)上查看；它紧随主要的[Linux内核](https://github.com/torvalds/linux)之后。
 
 Linux主内核正在不断更新。我们采用了在首页上提到的内核的长期发行版，并将所做的更改集成到树莓派内核中。然后，我们创建一个“下一步”分支，其中包含内核的不稳定端口。经过广泛的测试和讨论，我们将其推送到主分支。
 
