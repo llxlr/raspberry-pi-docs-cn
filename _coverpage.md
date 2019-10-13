@@ -1,6 +1,6 @@
 ![cover](./images/logo1.svg)
 
-# 树莓派官方文档 <font face="verdana" color="green">中文版</font>
+# 树莓派官方文档<font color="green">中文版</font>
 
 > 🍭 A magical online doc.
 
