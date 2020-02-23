@@ -30,6 +30,18 @@
             homepage: './home.md',
         }
     </script>
+    <div id="gitalk-container"></div>
+    <script>
+        var gitalk = new Gitalk({
+            clientID: '',
+            clientSecret: '',
+            repo: 'raspberry-pi-docs-cn',
+            owner: 'jamesyangget',
+            admin: ['jamesyangget'],
+            id: location.pathname
+        })
+        gitalk.render('gitalk-container');
+    </script>
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 </body>
 
