@@ -1,5 +1,3 @@
-* [首页](/)
-
 * [设置/快速开始](/docs/setup/)
 
 * [安装](/docs/installation/)
