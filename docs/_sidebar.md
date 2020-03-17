@@ -16,4 +16,4 @@
 
 * [常见技术问题](/docs/faqs/)
 
-* [](/docs/translate/)
+* [个人翻译声明](/docs/translate/)
