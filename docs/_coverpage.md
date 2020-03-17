@@ -8,5 +8,5 @@
 
 - *Geek/Love/Fun/Awesome*
 
-[开始](docs/home.md)
+[开始](/home.md)
 [个人主页](https://white-album.top/)
