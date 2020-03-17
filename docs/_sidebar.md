@@ -15,3 +15,5 @@
 * [硬件](/docs/hardware/)
 
 * [常见技术问题](/docs/faqs/)
+
+* [](/docs/translate/)
