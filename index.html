@@ -1,56 +1,53 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>树莓派官方文档中文版</title>
-    <link rel="icon" href="./images/favicon.png" sizes="128x128">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="description" content="Description">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
-    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+  <title>树莓派官方文档中文版</title>
+  <link rel="icon" href="./images/favicon.png" sizes="128x128">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+  <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
 </head>
-
 <body>
-    <div id="app">
-    </div>
-    <script>
-        window.$docsify = {
-            basePath: '/docs',
-            name: 'raspberry-pi-docs-cn',
-            repo: 'white-album-lab/raspberry-pi-docs-cn',
-            logo: '../images/logo2.svg',
-            subMaxLevel: 2,
-            auto2top: true,
-            coverpage: true,
-            onlyCover: true,
-            loadSidebar: true,
-            alias: {
-                '/.*/_sidebar.md': '_sidebar.md'
-            }
-        }
-    </script>
-    <div id="gitalk-container"></div>
-    <script>
-        var gitalk = new Gitalk({
-            clientID: '564881622fa9b8cf6b73',
-            clientSecret: '38b48a17d59fe705aaaaca10d97aa7eeb38dea54',
-            repo: 'raspberry-pi-docs-cn',
-            owner: 'jamesyangget',
-            admin: ['jamesyangget'],
-            title: location.hash.match(/#/(.*?)([?]|$)/)[1],
-            id: location.hash.match(/#/(.*?)([?]|$)/)[1],
-        })
-        // 监听URL中hash的变化，如果发现换了一个MD文件，那么刷新页面，解决整个网站使用一个gitalk评论issues的问题。
-        window.onhashchange = function(event){
-            if(event.newURL.split('?')[0] !== event.oldURL.split('?')[0]) {
-                location.reload()
-            }
-        }
-    </script>
-    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <div id="app">
+  </div>
+  <script>
+    window.$docsify = {
+      basePath: '/docs',
+      name: 'raspberry-pi-docs-cn',
+      repo: 'llxlr/raspberry-pi-docs-cn',
+      logo: '../images/logo2.svg',
+      subMaxLevel: 2,
+      auto2top: true,
+      coverpage: true,
+      onlyCover: true,
+      loadSidebar: true,
+      alias: {
+        '/.*/_sidebar.md': '_sidebar.md'
+      }
+    }
+  </script>
+  <div id="gitalk-container"></div>
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '564881622fa9b8cf6b73',
+      clientSecret: '38b48a17d59fe705aaaaca10d97aa7eeb38dea54',
+      repo: 'raspberry-pi-docs-cn',
+      owner: 'llxlr',
+      admin: ['llxlr'],
+      title: location.hash.match(/#/(.*?)([?]|$)/)[1],
+      id: location.hash.match(/#/(.*?)([?]|$)/)[1],
+    })
+    // 监听URL中hash的变化，如果发现换了一个MD文件，那么刷新页面，解决整个网站使用一个gitalk评论issues的问题。
+    window.onhashchange = function(event){
+      if(event.newURL.split('?')[0] !== event.oldURL.split('?')[0]) {
+        location.reload()
+      }
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 </body>
-
 </html>
